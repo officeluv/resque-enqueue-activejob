@@ -5,7 +5,7 @@ Enqueues tasks to resque 1.x.x. Does not attempt to do anything else. `redis` sh
 ```
 var enqueue = require("resque-enqueue");
 
-enqueue(redis, "normal", "SendWelcome", "bob@bob.com", function(err) {
+enqueue(redis, "normal", "SendWelcome", ["bob@bob.com"], function(err) {
   if(!err) {
     console.log("mail sent!");
   }
@@ -18,7 +18,7 @@ enqueue(redis, "normal", "SendWelcome", "bob@bob.com", function(err) {
 
 enqueues a single task to resque.
 
-### enqueues.setNamespace(namespace)
+### `enqueue.setNamespace(namespace)`
 
 sets the namespace, defaults to `resque`.
 
