@@ -1,5 +1,7 @@
 # resque-enqueue
 
+![Build status](https://travis-ci.org/timruffles/resque-enqueue.svg)
+
 Enqueues tasks to resque 1.x.x. Does not attempt to do anything else. `redis` should be something like `node-redis` that has `sadd` and `rpush` with a callback API.
 
 ```
@@ -14,7 +16,7 @@ enqueue(redis, "normal", "SendWelcome", ["bob@bob.com"], function(err) {
 
 ## API
 
-### `enqueue(redis, queue, className, args, cb)` or `enqueue.enqueue(redis, queue, className, args, cb)`
+### `enqueue(redis, queue, className, args..., cb)` or `enqueue.enqueue(redis, queue, className, args..., cb)`
 
 enqueues a single task to resque.
 

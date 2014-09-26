@@ -1,7 +1,10 @@
 var namespace = "resque";
 
 
-module.exports = function(redis, queue, jobName, args,  cb) {
+module.exports = function(redis, queue, jobName) {
+
+  var args = [].slice.call(arguments, 3, -1);
+  var cb = arguments[arguments.length - 1];
 
   if(typeof cb !== "function") {
     throw new Error("Must provide a callback");

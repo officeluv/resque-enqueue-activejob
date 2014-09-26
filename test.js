@@ -15,7 +15,7 @@ describe("enqueueing", function() {
   describe("effect", function() {
 
     before(function(done) {
-      enqueue(c, "abnormal", "something", [1, 2], done);
+      enqueue(c, "abnormal", "something", 1, 2, done);
     });
 
     it("ensures queue is present", function(done) {
@@ -41,7 +41,7 @@ describe("enqueueing", function() {
 
     before(function(done) {
       enqueue.setNamespace("myresque");
-      enqueue(c, "abnormal", "something", [1, 2], done);
+      enqueue(c, "abnormal", "something", 1, 2, done);
     });
 
     it("ensures queue is present", function(done) {
