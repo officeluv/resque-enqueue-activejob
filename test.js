@@ -30,7 +30,7 @@ describe("enqueueing", function() {
       c.lrange("resque:queue:abnormal", 0, -1, function(err, mems) {
         if(err) done(err);
         assert.equal(mems.length, 1);
-        assert.equal(mems[0], '{"class":"something","args":[1,2]}');
+        assert.equal(mems[0], '{"class":"ActiveJob::QueueAdapters::ResqueAdapter::JobWrapper","args":{"job_class":"something":"queue_name":"abnormal","arguments":[1,2]}}');
         done();
       });
     });

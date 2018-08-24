@@ -10,7 +10,14 @@ module.exports = function(redis, queue, jobName) {
     throw new Error("Must provide a callback");
   }
 
-  var payload = JSON.stringify({"class": jobName, args: args || []});
+  var payload = JSON.stringify({
+      "class": "ActiveJob::QueueAdapters::ResqueAdapter::JobWrapper",
+      args: {
+          job_class: jobName,
+          queue_name: queue,
+          "arguments": args
+      }
+  });
 
   var toHear = 2;
 
