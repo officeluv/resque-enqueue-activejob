@@ -12,11 +12,11 @@ module.exports = function(redis, queue, jobName) {
 
   var payload = JSON.stringify({
       "class": "ActiveJob::QueueAdapters::ResqueAdapter::JobWrapper",
-      args: {
+      args: [{
           job_class: jobName,
           queue_name: queue,
           "arguments": args
-      }
+      }]
   });
 
   var toHear = 2;
