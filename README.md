@@ -6,7 +6,7 @@ Enqueues tasks to resque 1.x.x, specifically for the `ActiveJob` wrapper. Does n
 
 Based on the original package for bare resque: [resque-enqueue](https://github.com/timruffles/resque-enqueue).
 
-```
+```js
 var enqueue = require('resque-enqueue-activejob');
 
 enqueue(redis, 'normal', 'SendWelcome', 'bob@bob.com', function(err) {
