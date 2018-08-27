@@ -1,6 +1,6 @@
 {
   "name": "resque-enqueue-activejob",
-  "version": "1.0.0",
+  "version": "0.1.0",
   "description": "enqueue tasks to ActiveJob resque from node",
   "main": "index.js",
   "scripts": {
